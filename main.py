@@ -19,9 +19,41 @@ def is_palindrome(s: str) -> bool:
     # Check if the normalized string is equal to its reverse
     return normalized_str == normalized_str[::-1]
 
-if __name__ == "__main__":
-    # Example usage
+def analyze_strings(strings: list) -> dict:
+    """
+    Analyze a list of strings and determine if each is a palindrome.
+
+    Args:
+        strings (list): The list of strings to analyze.
+
+    Returns:
+        dict: A dictionary with strings as keys and their palindrome status as values.
+    """
+    return {s: is_palindrome(s) for s in strings}
+
+def count_palindromes(strings: list) -> int:
+    """
+    Count the number of palindromes in a list of strings.
+
+    Args:
+        strings (list): The list of strings to analyze.
+
+    Returns:
+        int: The count of palindromes in the list.
+    """
+    return sum(1 for s in strings if is_palindrome(s))
+
+def test_palindrome_functionality():
+    """
+    Test the palindrome functionality to ensure it works correctly.
+    """
     test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar"]
-    for test in test_strings:
-        result = is_palindrome(test)
+    results = analyze_strings(test_strings)
+    for test, result in results.items():
         print(f'"{test}" is a palindrome: {result}')
+    
+    palindrome_count = count_palindromes(test_strings)
+    print(f'Total number of palindromes: {palindrome_count}')
+
+if __name__ == "__main__":
+    test_palindrome_functionality()
