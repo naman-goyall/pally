@@ -43,8 +43,10 @@ def count_palindromes(strings: list) -> int:
     """
     return sum(1 for s in strings if is_palindrome(s))
 
-if __name__ == "__main__":
-    # Example usage
+def test_palindrome_functionality():
+    """
+    Test the palindrome functionality to ensure it works correctly.
+    """
     test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar"]
     results = analyze_strings(test_strings)
     for test, result in results.items():
@@ -52,3 +54,6 @@ if __name__ == "__main__":
     
     palindrome_count = count_palindromes(test_strings)
     print(f'Total number of palindromes: {palindrome_count}')
+
+if __name__ == "__main__":
+    test_palindrome_functionality()
