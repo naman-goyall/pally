@@ -1,26 +1,17 @@
 import re
 
-def is_palindrome(s: str) -> bool:
+def compute_sum() -> int:
     """
-    Check if the given string is a palindrome.
-
-    A palindrome is a string that reads the same forwards and backwards,
-    ignoring spaces, punctuation, and case.
-
-    Args:
-        s (str): The string to check.
+    Compute the sum of 1 + 1.
 
     Returns:
-        bool: True if the string is a palindrome, False otherwise.
+        int: The result of the addition.
     """
-    # Normalize the string: remove non-alphanumeric characters and convert to lowercase
-    normalized_str = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
-    
-    # Check if the normalized string is equal to its reverse
-    return normalized_str == normalized_str[::-1]
+    return 1 + 1
 
 if __name__ == "__main__":
     # Example usage
+    print(f"The result of 1 + 1 is: {compute_sum()}")
     test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar"]
     for test in test_strings:
         result = is_palindrome(test)
