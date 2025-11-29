@@ -1,4 +1,5 @@
 import re
+import unittest
 
 def compute_sum() -> int:
     """
@@ -9,6 +10,10 @@ def compute_sum() -> int:
     """
     return 1 + 1
 
+class TestComputeSum(unittest.TestCase):
+    def test_compute_sum(self):
+        self.assertEqual(compute_sum(), 2)
+
 if __name__ == "__main__":
     # Example usage
     print(f"The result of 1 + 1 is: {compute_sum()}")
@@ -16,3 +21,4 @@ if __name__ == "__main__":
     for test in test_strings:
         result = is_palindrome(test)
         print(f'"{test}" is a palindrome: {result}')
+    unittest.main()
