@@ -47,7 +47,7 @@ def test_palindrome_functionality():
     """
     Test the palindrome functionality to ensure it works correctly.
     """
-    test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar"]
+    test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar", "12321", "Hello, World!"]
     results = analyze_strings(test_strings)
     for test, result in results.items():
         print(f'"{test}" is a palindrome: {result}')
