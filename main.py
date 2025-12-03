@@ -67,6 +67,8 @@ def test_is_palindrome():
     assert is_palindrome("") == True
     assert is_palindrome("No 'x' in Nixon") == True
     assert is_palindrome("Hello") == False
+    assert is_palindrome("Able was I ere I saw Elba") == True
+    assert is_palindrome("A Toyota's a Toyota") == True
 
 if __name__ == "__main__":
     test_palindrome_functionality()
