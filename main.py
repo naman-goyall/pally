@@ -13,6 +13,10 @@ def is_palindrome(s: str) -> bool:
     Returns:
         bool: True if the string is a palindrome, False otherwise.
     """
+    # Handle edge case for empty strings
+    if not s:
+        return True
+    
     # Normalize the string: remove non-alphanumeric characters and convert to lowercase
     normalized_str = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
     
@@ -47,7 +51,7 @@ def test_palindrome_functionality():
     """
     Test the palindrome functionality to ensure it works correctly.
     """
-    test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar"]
+    test_strings = ["A man, a plan, a canal, Panama", "Not a palindrome", "Racecar", ""]
     results = analyze_strings(test_strings)
     for test, result in results.items():
         print(f'"{test}" is a palindrome: {result}')
