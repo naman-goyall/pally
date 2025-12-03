@@ -55,5 +55,21 @@ def test_palindrome_functionality():
     palindrome_count = count_palindromes(test_strings)
     print(f'Total number of palindromes: {palindrome_count}')
 
+def test_is_palindrome():
+    """
+    Unit tests for the is_palindrome function.
+    """
+    assert is_palindrome("A man, a plan, a canal, Panama") == True
+    assert is_palindrome("Not a palindrome") == False
+    assert is_palindrome("Racecar") == True
+    assert is_palindrome("12321") == True
+    assert is_palindrome("Was it a car or a cat I saw?") == True
+    assert is_palindrome("") == True
+    assert is_palindrome("No 'x' in Nixon") == True
+    assert is_palindrome("Hello") == False
+    assert is_palindrome("Able was I ere I saw Elba") == True
+    assert is_palindrome("A Toyota's a Toyota") == True
+
 if __name__ == "__main__":
     test_palindrome_functionality()
+    test_is_palindrome()
